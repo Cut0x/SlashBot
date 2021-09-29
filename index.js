@@ -7,10 +7,8 @@ const client = new Client({
     ]
 });
 
-client.color = {
-    def: "#94f1e0",
-    red: "RED"
-};
+const { token, guildId, channelId } = require("./Data/config");
+const { def, red } = require("./Data/color");
 
 const data = new SlashCommandBuilder()
     .setName("ping")
@@ -23,10 +21,10 @@ client.on("ready", async () => {
     client.user.setStatus("dnd")
 
 
-    client.guilds.cache.get("id_serveur").commands.cache.map(command => {
+    client.guilds.cache.get(guildId).commands.cache.map(command => {
         command.delete();
     });
-    client.guilds.cache.get("id_serveur").commands.create(data);
+    client.guilds.cache.get(guildId).commands.create(data);
 
 });
 
@@ -38,4 +36,4 @@ client.on("interactionCreate", interaction => {
     }
 });
 
-client.login("token")
+client.login(token)
