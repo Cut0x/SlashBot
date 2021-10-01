@@ -17,9 +17,14 @@ const data = new SlashCommandBuilder()
 client.on("ready", async () => {
     console.log(`Connecté sur ` + client.user.username)
 
-    client.user.setActivity("SlahTemplate")
-    client.user.setStatus("dnd")
-
+    client.user.setPresence({
+        activities: [
+            {
+                name: 'Template bot slash'
+            }
+        ],
+        status: 'dnd'
+    });
 
     client.guilds.cache.get(guildId).commands.cache.map(command => {
         command.delete();
