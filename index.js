@@ -26,9 +26,9 @@ client.on("ready", async () => {
         status: 'dnd'
     });
 
-    client.guilds.cache.get(guildId).commands.cache.map(command => {
+    /*client.guilds.cache.get(guildId).commands.cache.map(command => {
         command.delete();
-    });
+    });*/
     client.guilds.cache.get(guildId).commands.create(data);
 
 });
