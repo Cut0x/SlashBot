@@ -3,7 +3,7 @@ Template de bot avec /commands
 
 # Modules
 ```
-npm install --save discord.js @discordjs/rest discord-api-types
+npm install --save discord.js @discordjs/rest discord-api-types @discordjs/builders
 ```
 
 # Config -> `./exmple.config.js`
