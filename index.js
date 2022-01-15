@@ -35,7 +35,7 @@ client.on("ready", async () => {
 
 client.on("interactionCreate", interaction => {
     if (interaction.isCommand()) {
-        if (interaction.commandName === "data") {
+        if (interaction.commandName === "ping") {
             interaction.reply({ content: "pong!", ephemeral: true })
         }
     }
